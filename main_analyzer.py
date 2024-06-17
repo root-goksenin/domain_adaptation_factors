@@ -6,13 +6,6 @@ from src.analyzers.analyze_types import calculate_query_type_entropy, calculate_
 import click 
 
 
-source_q_path = ""
-source_corpus_path = ""
-gen_q_path = ""
-test_q_path = ""
-test_corpus_path = ""
-
-
 @click.command()
 @click.option("--source_query_path", required=True, help="Path to the source query file")
 @click.option("--source_corpus_path", required=True, help="Path to the source corpus file")
@@ -20,14 +13,9 @@ test_corpus_path = ""
 @click.option("--test_corpus_path", required=True, help="Path to the test corpus file")
 @click.option("--generated_query_path", required=True, help="Path to the generated query file")
 def main(source_query_path, source_corpus_path, test_query_path, test_corpus_path, generated_query_path):
-    source_q_path = source_query_path
-    source_corpus_path = source_corpus_path
-    gen_q_path = generated_query_path
-    test_q_path = test_query_path
-    test_corpus_path = test_corpus_path
-    gen_q = load_queries(gen_q_path)
-    test_q = load_queries(test_q_path)
-    source_q = load_queries(source_q_path)
+    gen_q = load_queries(generated_query_path)
+    test_q = load_queries(test_query_path)
+    source_q = load_queries(source_query_path)
     source_c = load_corpus(source_corpus_path)
     test_c = load_corpus(test_corpus_path)
 
@@ -59,8 +47,7 @@ def main(source_query_path, source_corpus_path, test_query_path, test_corpus_pat
                                                                       test_query_types)
     generated_query_type_to_source_query = calculate_query_type_overlap(generated_query_types,
                                                                       source_query_types) 
-    
-    
+        
 
 if __name__ == "__main__":
     

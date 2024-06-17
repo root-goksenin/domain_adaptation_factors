@@ -42,19 +42,19 @@ if __name__ == "__main__":
     plot_barplot(column_names,
                  d_beir_gpl.drop(columns = ["Dataset"]), d_lotte_gpl[d_lotte_gpl['type'] == "search"].drop(columns = ["Dataset", "type"]), 
                  d_lotte_gpl[d_lotte_gpl['type'] == "forum"].drop(columns = ["Dataset", "type"]))
-    # column_names = ["GPL", "InPars"]
-    # plot_barplot(column_names,
-    #             d_beir_gpl.drop(columns = ["Dataset"]), 
-    #             d_beir_inpars.drop(columns = ["Dataset"]))
+    column_names = ["GPL", "InPars"]
+    plot_barplot(column_names,
+                d_beir_gpl.drop(columns = ["Dataset"]), 
+                d_beir_inpars.drop(columns = ["Dataset"]))
     
     # Plot Overlaps
-    # plot_overlap_test_document(d_beir_gpl, d_beir_inpars)
-    # plot_overlap_test_query(d_beir_gpl, d_beir_inpars)
-    # plot_generated_query_type_entropy(d_beir_gpl, d_beir_inpars)
+    plot_overlap_test_document(d_beir_gpl, d_beir_inpars)
+    plot_overlap_test_query(d_beir_gpl, d_beir_inpars)
+    plot_generated_query_type_entropy(d_beir_gpl, d_beir_inpars)
     
     
     # Plot Generated Query Types
     plot_query_types(gpl_generated_beir)
-    # plot_query_types(inpars_generated_beir)
+    plot_query_types(inpars_generated_beir)
     
     

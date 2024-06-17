@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "src"
+version = "0.1.0"
+description = "This package contains the necessary tools to reproduce our paper"
+authors = ["root-goksenin <Goksenin.yuksel@outlook.com>"]
+license = "LICENSE"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+matplotlib = "^3.9.0"
+pandas = "^2.2.2"
+click = "^8.1.7"
+numpy = "^2.0.0"
+nltk = "^3.8.1"
+scipy = "^1.13.1"
+seaborn = "^0.13.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
